@@ -6,7 +6,8 @@ const Header = () => {
       <div className="heade-parent  flex justify-between p-1">
         <span>
           <svg
-            fill="#ffffff"
+            fill="#fff"
+            stroke="transparent"
             width="60px"
             height="60px"
             viewBox="-6.5 0 32 32"
@@ -51,8 +52,8 @@ const Header = () => {
 
           <span className="px-5 flex justify-between items-center text-center">
             <svg
-              className="rounded-full"
-              stroke="#ffffff"
+              fill="#fff"
+              stroke="transparent"
               width="20px"
               height="20px"
               data-encore-id="icon"
@@ -71,8 +72,8 @@ const Header = () => {
             <span className="bg-sky-300 h-2 w-2 rounded-full absolute ml-6"></span>
             <svg
               className="rounded-md"
-              stroke="#ffffff"
-              stroke-width="0.5"
+              fill="#fff"
+              stroke="transparent"
               width="25px"
               height="25px"
               data-encore-id="icon"
@@ -85,15 +86,15 @@ const Header = () => {
             </svg>
           </span>
           <span
-            className="  w-12 h-12 mt-1 mr-1 py-2 rounded-full"
+            className="  w-10 h-10 mt-1 mr-1  px-1 py-2 rounded-full items-center"
             style={{ background: "#1f1f1f" }}
           >
             <svg
               fill="#ffffff"
               data-encore-id="icon"
               role="img"
-              width="40px"
-              height="40px"
+              width="28px"
+              height="30px"
               aria-hidden="true"
               viewBox="-6.5 0 32 32"
               class="Svg-sc-ytk21e-0 bneLcE"

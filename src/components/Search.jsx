@@ -25,8 +25,8 @@ const Search = () => {
 
           <button className=" absolute end-2.5 bottom-2.5 px-4 border-l-2">
             <svg
-              stroke-width="1.5"
-              stroke="#ffffff"
+              fill="#b3b3b3"
+              strokeLinejoin="2"
               data-encore-id="icon"
               width="25px"
               height="25px"

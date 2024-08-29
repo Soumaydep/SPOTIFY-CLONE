@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Container from "./components/Container";
 // import Login from "./components/Login";
 
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
        {/* <Login></Login> */}
-       <Header></Header>
+       <Container></Container>
     </div>
   );
 }

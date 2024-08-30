@@ -2,9 +2,9 @@ import TagListSongs from "./TagListSongs";
 
 const Body = () => {
   return (
-    <div className="body-container px-2 m-1">
+    <div className="body-container px-2 m-1 flex  justify-around">
       <div
-        className="left-section w-4/12 px-5 rounded-md"
+        className="left-section w-5/12 px-5  rounded-md"
         style={{ background: "#121212" }}
       >
         <div className="heading-icon flex justify-between items-center">
@@ -60,27 +60,27 @@ const Body = () => {
           </div>
         </div>
 
-        <div className="three-btn px-2 py-2 flex w-7/12 justify-around">
+        <div className="three-btn mt-2  grid grid-cols-5 gap-2">
           <button
-            className="text-white font-semibold rounded-full px-2 py-2 w-full mr-2"
+            className="text-white text-sm  font-medium rounded-full p-2"
             style={{ background: "#1f1f1f" }}
           >
             Playlists
           </button>
           <button
-            className="text-white font-semibold rounded-full w-full mr-2"
+            className="text-white font-medium  text-sm rounded-full"
             style={{ background: "#1f1f1f" }}
           >
             Artists
           </button>
           <button
-            className="text-white font-semibold rounded-full w-full mr-2"
+            className="text-white font-medium  text-sm rounded-full"
             style={{ background: "#1f1f1f" }}
           >
             Albums
           </button>
         </div>
-        <div className="seacrh-recent-playlists-parent  px-2 max-h-[500px] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900 scroll-smooth">
+        <div className="seacrh-recent-playlists-parent  px-2 max-h-[469px] overflow-y-scroll scroll-smooth">
           <div className="seacrh-recent flex justify-between items-center p-2 ">
             <span>
               <svg
@@ -126,10 +126,100 @@ const Body = () => {
           <TagListSongs></TagListSongs>
           <TagListSongs></TagListSongs>
           <TagListSongs></TagListSongs>
+          <TagListSongs></TagListSongs>
+          <TagListSongs></TagListSongs>
+          <TagListSongs></TagListSongs>
+          <TagListSongs></TagListSongs>
+          <TagListSongs></TagListSongs>
+          <TagListSongs></TagListSongs>
         </div>
       </div>
 
-      <div className="right-section"></div>
+      <div className="right-section w-full px-5 ml-2 rounded-md bg-gradient-to-b from-[#545754] via-[#262726] to-[#121212]  h-[580px] scrollable-content overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-gray-900 scroll-smooth">
+        <div className="three-btn flex mt-6 bg-transparent sticky top-5 z-10 ">
+          <div className="mr-2">
+            <span>
+              <button
+                className="rounded-full text-white py-2 px-4 text-center"
+                style={{ background: "#646664" }}
+              >
+                All
+              </button>
+            </span>
+          </div>
+          <div className="mr-2">
+            <span>
+              <button
+                className="rounded-full text-white py-2 px-4 text-center"
+                style={{ background: "#646664" }}
+              >
+                Music
+              </button>
+            </span>
+          </div>
+
+          <div>
+            <span>
+              <button
+                className="rounded-full text-white py-2 px-4 text-center"
+                style={{ background: "#646664" }}
+              >
+                Podcasts
+              </button>
+            </span>
+          </div>
+        </div>
+        <div className="mt-7 grid grid-cols-3 gap-4">
+          <div
+            className="flex rounded-md text-center"
+            style={{ background: "#646664" }}
+          >
+            <span className="h-12 w-12 rounded-l-md bg-slate-400"></span>
+
+            <p className="text-white px-2 py-2">Melody by underated gems</p>
+          </div>
+          <div
+            className="flex rounded-md   text-center"
+            style={{ background: "#646664" }}
+          >
+            <span className="h-12 w-12 rounded-l-md bg-slate-400"></span>
+
+            <p className="text-white px-2 py-2">Melody by underated gems</p>
+          </div>
+          <div
+            className="flex rounded-md   text-center"
+            style={{ background: "#646664" }}
+          >
+            <span className="h-12 w-12 rounded-l-md bg-slate-400"></span>
+
+            <p className="text-white px-2 py-2">Melody by underated gems</p>
+          </div>
+          <div
+            className="flex rounded-md  text-center"
+            style={{ background: "#646664" }}
+          >
+            <span className="h-12 w-12 rounded-l-md bg-slate-400"></span>
+
+            <p className="text-white px-2 py-2">Melody by underated gems</p>
+          </div>
+          <div
+            className="flex rounded-md   text-center"
+            style={{ background: "#646664" }}
+          >
+            <span className="h-12 w-12 rounded-l-md bg-slate-400"></span>
+
+            <p className="text-white px-2 py-2">Melody by underated gems</p>
+          </div>
+          <div
+            className="flex rounded-md   text-center"
+            style={{ background: "#646664" }}
+          >
+            <span className="h-12 w-12 rounded-l-md bg-slate-400"></span>
+
+            <p className="text-white px-2 py-2">Melody by underated gems</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

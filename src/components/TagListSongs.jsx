@@ -1,29 +1,45 @@
-const TagListSongs = () => {
+import { FaPlay } from 'react-icons/fa'; 
+
+const TagListSongs = ({ props }) => {
   return (
-    <div className="group hover:bg-gray-900 px-1 py-1 rounded-md" >
-      {/* song and playlist and artists */}
-      <div className="flex p-2">
-        <div className="flex items-center justify-center h-12 w-12 bg-slate-500">
-          <span>
-            <svg
-              className="hidden group-hover:block"
-              fill="#fff"
-              height="25"
-              width="25"
-              data-encore-id="icon"
-              role="img"
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-            >
-              <path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path>
-            </svg>
-          </span>
+    <div>
+      {props.map((p) => (
+        <div
+          key={p.id}
+          className="  group hover:bg-gray-900 px-1 py-1 rounded-md"
+        >
+          <div className="flex p-2">
+            <div className=" relative flex items-center justify-center h-12 w-12 group-hover:bg-black">
+              {p.type==='playlist'?  
+               <img
+                src={p.images?.[0]?.url}
+                alt={p.name}
+                className="h-12 w-12 object-fill group-hover:opacity-50"
+              /> :
+              <img
+              src={p.images?.[2].url}
+              alt={p.name}
+              className="h-12 w-12 rounded-full object-fill group-hover:opacity-50"
+            />      
+            
+            }
+             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <FaPlay className="text-white text-xl" />
+              </div>
+             
+            </div>
+            <div className="px-2">
+              <p className="font-medium text-white">{p.name}</p>
+              <p className="font-thin text-white">
+                {p.type === "playlist"
+                  ? p.owner.display_name
+                  : ""}
+                
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="px-2">
-          <p className="font-medium text-white">Melody by underated gems</p>
-          <p className="font-thin text-white">rishi</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };

@@ -1,4 +1,18 @@
+import { googleLogin } from "../firbaseAuth/googleLogin";
+import { loginUrl } from "../../src/config";
+
+
 const Login = () => {
+
+ const handleGoogleLogin= async()=>
+ {
+    const user= await googleLogin();
+    if(user)
+    {
+      window.location.href=loginUrl;
+    }
+ }
+
   return (
     <div className="bg-gradient-to-b from-[#2a2a2a] via-[#232323] via-[#1d1d1d] to-[#090909]">
       <div className="flex items-center justify-center p-8">
@@ -20,13 +34,15 @@ const Login = () => {
               </svg>
             </div>
 
-            <p className="font-bold text-3xl text-white p-6">
+            <a href={loginUrl} className="font-bold text-3xl text-white p-6">
               Log in to Spotify
-            </p>
+            </a>
           </div>
 
           <div className="signin flex flex-col text-center items-center py-4">
-            <button className="flex  border-2 rounded-3xl mb-2 text-white border-gray-700 w-4/12 px-4 py-2 font-medium hover:border-white">
+            <button className="flex  border-2 rounded-3xl mb-2 text-white border-gray-700 w-4/12 px-4 py-2 font-medium hover:border-white"
+                    onClick={handleGoogleLogin}
+            >
               <span className="text-white">
                 <img
                   className="px-3 mr-3"
@@ -86,8 +102,7 @@ const Login = () => {
                 />
               </div>
 
-              <button className="h-10 w-full mt-12 bg-green-500 hover:bg-green-600 text-black  rounded-3xl font-semibold"
-              >
+              <button className="h-10 w-full mt-12 bg-green-500 hover:bg-green-600 text-black  rounded-3xl font-semibold">
                 Log In
               </button>
             </form>

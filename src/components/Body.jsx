@@ -1,6 +1,21 @@
+import { useState } from "react";
+import useHooks from "../CustomsHooks/useHooks";
 import TagListSongs from "./TagListSongs";
 
 const Body = () => {
+
+const {playList,artists}=useHooks();
+const [propsState,setPropsState]=useState([]);
+
+const handlePlaylists=()=>
+{
+  setPropsState(playList);
+}
+
+const handleArtists=()=>
+{
+  setPropsState(artists);
+}
   return (
     <div className="body-container px-2 m-1 flex  justify-around">
       <div
@@ -62,12 +77,14 @@ const Body = () => {
 
         <div className="three-btn mt-2  grid grid-cols-5 gap-2">
           <button
+            onClick={handlePlaylists}
             className="text-white text-sm  font-medium rounded-full p-2"
             style={{ background: "#1f1f1f" }}
           >
             Playlists
           </button>
           <button
+            onClick={handleArtists}
             className="text-white font-medium  text-sm rounded-full"
             style={{ background: "#1f1f1f" }}
           >
@@ -115,23 +132,7 @@ const Body = () => {
             </div>
           </div>
 
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
-          <TagListSongs></TagListSongs>
+          <TagListSongs props={propsState}></TagListSongs>
         </div>
       </div>
 

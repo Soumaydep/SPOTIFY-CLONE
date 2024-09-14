@@ -8,7 +8,7 @@ export const googleLogin =() =>
     return auth.signInWithPopup(provider).then(result =>{
         const token= result.user.getIdToken();
 
-        // console.log("here is token",token)
+        console.log("here is token",token)
 
         window.localStorage.setItem('firebase_token',token);
 

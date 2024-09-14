@@ -1,17 +1,14 @@
 import { googleLogin } from "../firbaseAuth/googleLogin";
 import { loginUrl } from "../../src/config";
 
-
 const Login = () => {
-
- const handleGoogleLogin= async()=>
- {
-    const user= await googleLogin();
-    if(user)
-    {
-      window.location.href=loginUrl;
+  const handleGoogleLogin = async () => {
+    const user = await googleLogin();
+    if (user) {
+      window.location.href = loginUrl;
+      
     }
- }
+  };
 
   return (
     <div className="bg-gradient-to-b from-[#2a2a2a] via-[#232323] via-[#1d1d1d] to-[#090909]">
@@ -40,13 +37,15 @@ const Login = () => {
           </div>
 
           <div className="signin flex flex-col text-center items-center py-4">
-            <button className="flex  border-2 rounded-3xl mb-2 text-white border-gray-700 w-4/12 px-4 py-2 font-medium hover:border-white"
-                    onClick={handleGoogleLogin}
+            <button
+              className="flex  border-2 rounded-3xl mb-2 text-white border-gray-700 w-4/12 px-4 py-2 font-medium hover:border-white"
+              onClick={handleGoogleLogin}
             >
               <span className="text-white">
                 <img
                   className="px-3 mr-3"
                   src="https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg"
+                  alt="google_svg"
                 ></img>
               </span>
               Continue with Google
@@ -56,6 +55,7 @@ const Login = () => {
                 <img
                   className="px-3 mr-3"
                   src="https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg"
+                  alt="fb_svg"
                 ></img>
               </span>
               Continue with Facebook
@@ -65,6 +65,7 @@ const Login = () => {
                 <img
                   className="px-3 mr-5"
                   src="https://accounts.scdn.co/sso/images/new-apple-icon.e356139ea90852da2e60f1ff738f3cbb.svg"
+                  alt="apple_svg"
                 ></img>
               </span>
               Continue with Apple

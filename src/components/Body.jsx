@@ -18,6 +18,7 @@ const Body = () => {
   const [query, setQuery] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
   const [tracklist, setTracksList] = useState([]);
+  const [selectedTrack, setSelectedTrack] = useState(null);
   const navigate = useNavigate();
   const { type, id } = useParams(); // Get the item id,type from the URL
   const { token } = useAuth();
@@ -39,8 +40,8 @@ const Body = () => {
 
       // Set the tracks list state with the fetched data
       setTracksList(tracksOpt);
-      console.log("travckList---------> :", tracklist);
-      console.log("ID:", id, "Track Response:", trackResponse);
+      // console.log("travckList---------> :", tracklist);
+      // console.log("ID:", id, "Track Response:", trackResponse);
     } catch (error) {
       console.error("Error fetching tracks:", error);
     }
@@ -133,6 +134,14 @@ const Body = () => {
     setQuery(value);
     searchSpotify(value); // Trigger search// `searchSpotify` should set the `searchResults` state accordingly
   };
+
+
+
+  // This function is passed to ItemDetail and updates selectedTrack
+  const handleTrackSelect = (track) => {
+    setSelectedTrack(track); // Set the selected track
+  };
+
 
   return (
     <>
@@ -316,14 +325,12 @@ const Body = () => {
         <div className="right-section w-full  ml-2 rounded-md bg-gradient-to-b from-[#545754] via-[#262726] to-[#121212]  h-[580px] scrollable-content overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-850 scrollbar-track-gray-900 scroll-smooth">
           {/* {!selectedItem ? <LeftSection/> : <ItemDetail items={selectedItem} />} */}
           {selectedItem && tracklist.length > 0 && (
-            <ItemDetail items={selectedItem} trackss={tracklist} />
+            <ItemDetail items={selectedItem} trackss={tracklist} onTrackSelect={handleTrackSelect}/>
           )}
         </div>
       </div>
       <div>
-        {selectedItem && tracklist.length > 0 && (
-          <PlayerTrack  trackss={tracklist} />
-        )}
+        <PlayerTrack  selectedTrack={selectedTrack}  />
       </div>
     </>
   );

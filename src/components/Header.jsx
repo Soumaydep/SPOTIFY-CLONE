@@ -1,6 +1,7 @@
 import Search from "./Search";
 
-const Header = () => {
+const Header = ({ user }) => {
+  const storedUser = JSON.parse(window.localStorage.getItem("user"));
   return (
     <div className="parent " style={{ background: "#000000" }}>
       <div className="heade-parent  flex justify-between p-1">
@@ -86,21 +87,10 @@ const Header = () => {
             </svg>
           </span>
           <span
-            className="  w-10 h-10 mt-1 mr-1  px-1 py-2 rounded-full items-center"
-            style={{ background: "#1f1f1f" }}
+            
+            
           >
-            <svg
-              fill="#ffffff"
-              data-encore-id="icon"
-              role="img"
-              width="28px"
-              height="30px"
-              aria-hidden="true"
-              viewBox="-6.5 0 32 32"
-              class="Svg-sc-ytk21e-0 bneLcE"
-            >
-              <path d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z"></path>
-            </svg>
+            <img src={storedUser?.photoURL} alt="Profile" className="items-center justify-center w-10 h-10  mr-1 rounded-full"/>
           </span>
         </div>
       </div>

@@ -1,17 +1,19 @@
 import { googleLogin } from "../firbaseAuth/googleLogin";
 import { loginUrl } from "../../src/config";
 
-const Login = () => {
+const Login = ({ setUser }) => {
   const handleGoogleLogin = async () => {
     const user = await googleLogin();
     if (user) {
+      setUser(user);
       window.location.href = loginUrl;
-      
+    } else {
+      console.error("Failed to get user from Google login");
     }
   };
 
   return (
-    <div className="bg-gradient-to-b from-[#2a2a2a] via-[#232323] via-[#1d1d1d] to-[#090909]">
+    <div className="bg-gradient-to-b from-[#2a2a2a] via-[#232323]  to-[#090909]">
       <div className="flex items-center justify-center p-8">
         <div
           className=" w-7/12 mx-auto mt-8 mid-container "

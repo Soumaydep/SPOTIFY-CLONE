@@ -5,7 +5,7 @@ const ItemDetail = ({ items, trackss,onTrackSelect }) => {
   }
 
   const handleTrackItemClick = (track) => {
-    console.log("track:",track);
+    // console.log("track:",track);
     onTrackSelect(track); // Call the parent function to set the selected track
   };
 
